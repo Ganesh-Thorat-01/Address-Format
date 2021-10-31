@@ -226,7 +226,6 @@ async def api(user_input: Address,user: User_Pydantic = Depends(get_current_user
         building=GoogleTranslator().translate(building)
         if "#" in building:
             building=building.replace('#','no. ')
-        building = re.sub('[^a-zA-Z.\d\s]', '', building)
         building=building.title()
         building=building.strip()
 
