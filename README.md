@@ -71,6 +71,48 @@
 
 
 ## Usage/Examples
+-**Test on CSV File**
+-Sample input data:-https://github.com/Ganesh-Thorat-01/Address-Format/tree/main/Data
+```python
+import requests
+import json as js
+import pandas as pd
+
+sample_address=pd.read_csv("Address_data.csv")
+new_df=pd.DataFrame(columns=["Building","Street","Locality","Landmark","VTC","Sub-District","District","State","Pincode","Mobile"])
+for ind in sample_address.index:
+    building=sample_address["building"][ind]
+    street=sample_address["street"][ind]
+    landmark=sample_address["landmark"][ind]
+    locality=sample_address["locality"][ind]
+    vtc=sample_address["vtc"][ind]
+    district=sample_address["district"][ind]
+    state=sample_address["state"][ind]
+
+    BASE_URL = 'https://addressformat.herokuapp.com/api'
+    token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MywidXNlcm5hbWUiOiJ0ZXN0dXNlciIsInBhc3N3b3JkX2hhc2giOiIkMmIkMTIkSURCVEo5S3FQd3JCaUxlQWJqMDMyZW5WSko2Q1NUeDV3OWRuUEIuaUd0RGp0SzNRZnhvQTYifQ.WNZwRK4CQBmasD6eUzY1PrPoQWnyP3pb5CE12593LAE"
+    data=js.dumps({"building": building,
+        "street": street,
+        "locality": locality,
+        "landmark": landmark,
+        "vtc": vtc,
+        "pincode": None,
+        "sub_district": None,
+        "district": district,
+        "state": state,
+        "mobile":None})
+
+    headers = {'Authorization': "Bearer {}".format(token)}
+    auth_response = requests.get(BASE_URL, headers=headers,data=data)
+    
+    response=auth_response.json()
+    print(ind,response)
+    df=response["Address"]
+    new_df= new_df.append(df, ignore_index = True)
+    
+new_df.to_csv('Testing_output.csv', index=False)
+
+```
 
 - **Input in Local language**
 
