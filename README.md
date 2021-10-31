@@ -98,7 +98,7 @@ print(auth_response.json())
 ```
 - **Output**
 ```json
-{'Address in Local Language': {'इमारत': 'क्रमांक 2', 'रस्ता': '', 'परिसर': 'प्रभाग क्रमांक 3', 'लँडमार्क': 'रामचंद्र महाराज मंदिर', 'शहर': 'शिरसोंडी', 'उप जिल्हा': 'मालेगाव', 'जिल्हा': 'नाशिक', 'राज्य': 'महाराष्ट्र', 'पिन कोड': '', 'मोबाईल': '7420033043'}, 'Address in English': {'Building': 'No. 2', 'Street': '', 'Locality': 'Division No. 3', 'Landmark': 'Ramchandra Maharaj Temple', 'VTC': 'Shirsondi', 'Sub-District': 'Malegaon', 'District': 'Nashik', 'State': 'Maharashtra', 'Pincode': '', 'Mobile': ''}}
+{'Address in Local Language': {'इमारत': 'क्रमांक 2', 'रस्ता': None, 'परिसर': 'प्रभाग क्रमांक 3', 'लँडमार्क': 'रामचंद्र महाराज मंदिर', 'शहर': 'शिरसोंडी', 'उप जिल्हा': 'मालेगाव', 'जिल्हा': 'नाशिक', 'राज्य': 'महाराष्ट्र', 'पिन कोड': '423208 ', 'मोबाईल': None}, 'Address in English': {'Building': 'No. 2', 'Street': None, 'Locality': 'Division No. 3', 'Landmark': 'Ramchandra Maharaj Temple', 'VTC': 'Shirsondi', 'Sub-District': 'Malegaon', 'District': 'Nashik', 'State': 'Maharashtra', 'Pincode': '423208 ', 'Mobile': None}}
 
 ```
 - **Input in English language**
@@ -126,16 +126,16 @@ print(auth_response.json())
 ```
 - **Output**
 ```json
-{'Address': {'Building': 'No. 2', 'Street': 'Cubbon Pet Main Road', 'Locality': '', 'Landmark': '', 'VTC': 'Bangalore North', 'Sub-District': 'Bangalore', 'District': 'Bangalore', 'State': 'Karnataka', 'Pincode': '560002', 'Mobile': ''}}
+{'Address': {'Building': 'No. 2', 'Street': 'Cubbon Pet Main Road', 'Locality': None, 'Landmark': None, 'VTC': 'Bengaluru North', 'Sub-District': 'Bengaluru', 'District': None, 'State': 'Karnataka', 'Pincode': '560002 ', 'Mobile': None}}
 ```
-
+**Its correcting _names of city_ as well as _state_ with present name**
 **_Note_**:- Token is given only for testing purpose and will be removed in future.
 ## Run Locally
 
 **Clone the project**
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/Ganesh-Thorat-01/Address-Format
 ```
 
 **Go to the project directory**
