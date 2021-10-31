@@ -91,7 +91,7 @@ data=js.dumps({"building": "No. 2",
     "state": "महाराष्ट्र",
     "mobile":None})
 
-headers = {'Authorization': "Bearer {}".format(token),"username":"testuser","password":"testpassword"}
+headers = {'Authorization': "Bearer {}".format(token)}
 auth_response = requests.get(BASE_URL, headers=headers,data=data)
 
 print(auth_response.json())
