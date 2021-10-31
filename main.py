@@ -134,7 +134,7 @@ def Home():
                 "mobile": None
             },
             "API call Method":"GET",
-            "API call URL":"http://localhost:8000/api",
+            "API call URL":"https://addressformat.herokuapp.com/api",
             "API call Headers":"Authorization: Bearer <token>",
             "Documentation":"https://github.com/Ganesh-Thorat-01/Address-Format",
             "©Copyright":"Innovation Geeks",
