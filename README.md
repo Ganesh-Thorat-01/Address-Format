@@ -31,7 +31,7 @@
 - **Must be a Scalable Design**
 
 ### **_You can reach the API here_**
-    - *https://addressformat.herokuapp.com/*
+    *https://addressformat.herokuapp.com/*
 
 
 ## Tech Stack
