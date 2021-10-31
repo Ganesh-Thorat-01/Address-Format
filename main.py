@@ -15,7 +15,7 @@ import uvicorn
 import Data.dictionary as dictionary
 import re
 
-app = FastAPI()
+app = FastAPI(openapi_url=None)
 
 JWT_SECRET = '73d9cb0dc74dda7cb79f00a6d3fc8159a8e8a3b0793567ef343900c6ddbe5413'
 
