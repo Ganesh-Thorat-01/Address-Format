@@ -222,8 +222,11 @@ async def api(user_input: Address,user: User_Pydantic = Depends(get_current_user
     
     if building is None or len(building)==0:
         building=None
-    else: 
-        building=GoogleTranslator().translate(building)
+    else:
+        if building.isdigit():
+            pass
+        else:
+            building=GoogleTranslator().translate(building)
         if "#" in building:
             building=building.replace('#','no. ')
         building=building.title()
@@ -232,7 +235,10 @@ async def api(user_input: Address,user: User_Pydantic = Depends(get_current_user
     if street is None or len(street)==0:
         street=None
     else:
-        street=GoogleTranslator().translate(street)
+        if street.isdigit():
+            pass
+        else:
+            street=GoogleTranslator().translate(street)
         if "#" in street:
             street=street.replace("#","No. ")
         street = re.sub('[^a-zA-Z.\d\s]', '', street)
@@ -241,7 +247,10 @@ async def api(user_input: Address,user: User_Pydantic = Depends(get_current_user
     if locality is None or len(locality)==0:
         locality=None
     else:
-        locality=GoogleTranslator().translate(locality)
+        if locality.isdigit():
+            pass
+        else:
+            locality=GoogleTranslator().translate(locality)
         if "#" in locality:
             locality=locality.replace("#","No. ")
         locality = re.sub('[^a-zA-Z.\d\s]', '', locality)
@@ -252,7 +261,10 @@ async def api(user_input: Address,user: User_Pydantic = Depends(get_current_user
     if landmark is None or len(landmark)==0:
         landmark=None
     else:
-        landmark=GoogleTranslator().translate(landmark)
+        if landmark.isdigit():
+            pass
+        else:
+            landmark=GoogleTranslator().translate(landmark)
         if "#" in landmark:
             landmark=landmark.replace("#","No. ")
         landmark = re.sub('[^a-zA-Z.\d\s]', '', landmark)
@@ -263,7 +275,10 @@ async def api(user_input: Address,user: User_Pydantic = Depends(get_current_user
     if vtc is None or len(vtc)==0:
         vtc=None
     else:
-        vtc=GoogleTranslator().translate(vtc)
+        if vtc.isdigit():
+            pass
+        else:
+            vtc=GoogleTranslator().translate(vtc)
         vtc=vtc.title()
         vtc=re.sub('[^a-zA-Z.\d\s]', '', vtc)
         for i in dictionary.post_office:
@@ -281,7 +296,10 @@ async def api(user_input: Address,user: User_Pydantic = Depends(get_current_user
     if sub_district is None or len(sub_district)==0:
         sub_district=None
     else:
-        sub_district=GoogleTranslator().translate(sub_district)
+        if sub_district.isdigit():
+            pass
+        else:
+            sub_district=GoogleTranslator().translate(sub_district)
         sub_district=sub_district.title()
         sub_district=re.sub('[^a-zA-Z.\d\s]', '', sub_district)
         sub_district=" ".join(pd.Series(sub_district.split()).drop_duplicates().tolist())
@@ -290,7 +308,10 @@ async def api(user_input: Address,user: User_Pydantic = Depends(get_current_user
     if district is None or len(district)==0:
         district=None
     else:
-        district=GoogleTranslator().translate(district)
+        if district.isdigit():
+            pass
+        else:
+            district=GoogleTranslator().translate(district)
         district=district.title()
         district=re.sub('[^a-zA-Z.\d\s]', '', district)
         district=" ".join(pd.Series(district.split()).drop_duplicates().tolist())
@@ -417,21 +438,29 @@ async def api(user_input: Address,user: User_Pydantic = Depends(get_current_user
 
     if street is None or len(street)==0:
         local_street=None
+    elif street.isdigit():
+        local_street=street
     else:
         local_street=GoogleTranslator(target=detected_language).translate(street)
 
     if locality is None or len(locality)==0:
         local_locality=None
+    elif locality.isdigit():
+        local_locality=locality
     else:
         local_locality=GoogleTranslator(target=detected_language).translate(locality)
 
     if landmark is None or len(landmark)==0:
         local_landmark=None
+    elif landmark.isdigit():
+        local_landmark=landmark
     else:    
         local_landmark=GoogleTranslator(target=detected_language).translate(landmark)
 
     if vtc is None or len(vtc)==0:
         local_vtc=None
+    elif vtc.isdigit():
+        local_vtc=vtc
     else:
         local_vtc=GoogleTranslator(target=detected_language).translate(vtc)
 
@@ -439,11 +468,15 @@ async def api(user_input: Address,user: User_Pydantic = Depends(get_current_user
 
     if sub_district is None or len(sub_district)==0:
         local_sub_district=None
+    elif sub_district.isdigit():
+        local_sub_district=sub_district
     else:
         local_sub_district=GoogleTranslator(target=detected_language).translate(sub_district)
 
     if district is None or len(district)==0:
         local_district=None
+    elif district.isdigit():
+        local_district=district
     else:
         local_district=GoogleTranslator(target=detected_language).translate(district)
 
