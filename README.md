@@ -67,7 +67,7 @@ https://youtu.be/uuOBTh0Zfhs
 
 ## Screenshots
 **API home page**
-[img]https://i.imgur.com/IcJUAj0.png[/img]
+[img](https://i.imgur.com/IcJUAj0.png)
 ![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
 
 
