@@ -170,7 +170,7 @@ print(auth_response.json())
 ```json
 {'Address': {'Building': 'No. 2', 'Street': 'Cubbon Pet Main Road', 'Locality': None, 'Landmark': None, 'VTC': 'Bengaluru North', 'Sub-District': 'Bengaluru', 'District': None, 'State': 'Karnataka', 'Pincode': '560002 ', 'Mobile': None}}
 ```
-**Its correcting _names of city_ as well as _state_ with present name**
+**Its correcting _names of city_ as well as _state_ with present name**<br>
 **_Note_**:- Token is given only for testing purpose and will be removed in future.
 ## Run Locally
 
